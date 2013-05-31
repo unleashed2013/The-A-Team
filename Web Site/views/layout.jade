@@ -1,0 +1,36 @@
+!!!5
+html
+	head
+		title #{title} - The A Team
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(type='text/javascript', src='/lib/jquery/jquery.min.js')
+		script(type='text/javascript', src='/lib/angular/angular.min.js')
+		script(type='text/javascript', src='/lib/angular/angular-resource.min.js')
+		script(type='text/javascript', src='/js/services.js')
+		script(type='text/javascript', src='/js/filters.js')
+		script(type='text/javascript', src='/js/controllers.js')
+		block script
+	body
+		header
+			.menu
+				ul
+					li
+						a(href='/#', class='menu-item', jumpto='nowhere') The Web App
+					li
+						a(href='/#', class='menu-item', jumpto='nowhere') Visualisation
+		.container
+			.main-content
+				block content
+		footer
+			.footer-fixed
+				ul.list-inline
+					li.footer-links
+						h3 About
+						ul
+							li 
+								Team
+					li.footer-links
+						h3 Source
+						ul
+							li 
+								Github
