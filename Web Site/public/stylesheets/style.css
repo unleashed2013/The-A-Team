@@ -1,0 +1,297 @@
+/*
+ * Import nib
+ */
+/*
+ * Grab a custom font from Google
+ */
+@import url("http://fonts.googleapis.com/css?family=Merriweather+Sans");
+/*
+ * Nib provides a CSS reset
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+  font-size: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    body { font-size:80%;}
+ }
+
+ @media only screen and (max-width: 600px) {
+    body { font-size:60%;}
+ }
+
+ @media only screen and (max-width: 400px) {
+    body { font-size:50%;}
+ }
+
+ol,
+ul {
+  list-style: none;
+}
+ul.list {
+  list-style: disc;
+  margin-left: 15px;
+}
+ol.list {
+	list-style: decimal;
+}
+.list li {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+textarea{
+	resize:none;
+	font-family: 'Merriweather Sans', sans-serif;
+}
+/*
+ * Store the main color and
+ * background color as variables
+ */
+header {
+  font-family: 'Merriweather Sans', sans-serif;
+  padding: 20px 0px 10px 0px;
+  color: #fff;
+  /*text-align: center;*/
+  display: inline-block;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+  background-color: #CC0A59;
+  border-bottom: 1px solid #3d8075;
+}
+
+.menu {
+  width:80%;
+  max-width: 960px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+  .menu h1 {
+    font-size: 2.7em;
+    font-weight: bold;    
+  }
+
+  .menu h2 {
+    font-size: 1.5em;
+    margin-top: 8px;
+  }
+
+.menu .menu-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1em;
+  text-decoration: underline;
+}
+
+  .menu ul {
+    list-style-type: none;
+    float:right;
+  }
+
+  .menu li {
+    display: inline;
+  }
+
+
+.main-content p {
+  margin-bottom: 20px;
+}
+.panel {
+  width: 100%;
+  display: inline-block;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #5f5858;
+  padding-bottom: 5%;
+}
+.panel-content {
+  width: 80%;
+  max-width: 960px;
+  margin: auto;
+  padding-top: 3%;
+  text-align: left;
+}
+.panel-content h1 {
+  font-size: 2em;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #625B59;
+  margin-bottom: 3%;
+}
+.panel-content h1.inverse {
+  color: #FFF;
+}
+#panel-next {
+  position: absolute;
+  cursor: pointer;
+}
+
+#webapp {
+  background-color: #faf9f0;
+  background-image: -ms-radial-gradient(center, circle farthest-corner, #faf9f0 50%, #EFEAED 100%);
+  background-image: -moz-radial-gradient(center, circle farthest-corner, #faf9f0 50%, #EFEAED 100%);
+  background-image: -o-radial-gradient(center, circle farthest-corner, #faf9f0 50%, #EFEAED 100%);
+  background-image: -webkit-gradient(radial, center center, 0, center center, 506, color-stop(0.5, #faf9f0), color-stop(1, #EFEAED));
+  background-image: -webkit-radial-gradient(center, circle farthest-corner, #faf9f0 50%, #EFEAED 100%);
+  background-image: radial-gradient(circle farthest-corner at center, #faf9f0 50%, #EFEAED 100%);
+}
+
+.fancy-button {
+  color: #fff;
+  background-color: #B28FFF;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: none;
+}
+.fancy-button:hover {
+  text-decoration: none;
+  background-color: #5ca899;
+}
+
+.float-left{
+  float:left;
+}
+
+.heading-text{
+  font-size: 2em;
+}
+
+.sub-heading-text{
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+#postcode-wrapper{
+  margin-top: 20px;
+}
+
+#postcode-input{
+  font-size: 3em;
+  width:50%;
+}
+
+#image-area {
+  width: 35%;
+}
+
+  #image-area img {
+    width: 100%;
+  }
+
+#details {
+  margin-left: 10px;
+  width: 55%;
+}
+
+footer {
+  width: 100%;
+  background-color: #45474d;
+  border-top: 1px solid #3d8075;
+  font-family: 'Merriweather Sans', sans-serif;
+  display: inline-block;
+  padding-bottom: 3%;
+}
+.footer-fixed {
+  width: 60%;
+  margin: auto;
+  padding-top: 20px;
+  font-size: 0.5em;
+}
+.list-inline > li { display: inline; }
+.footer-links {
+  float: left;
+  margin-left: 50px;
+}
+footer h3 {
+  color: #FFF;
+  margin-bottom: 10px;
+}
+.footer-links li {
+  padding: 2px 0px 2px 0px;
+}
+footer a {
+  color: #989ea6;
+}

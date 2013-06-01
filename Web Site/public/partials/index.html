@@ -1,0 +1,14 @@
+<div id="image-area" class='float-left'>
+	<img src="/images/toddler.jpg" alt="child with parent" id="toddler-image" />
+</div>
+<div id='details' class='float-left'>
+	<div class='heading-text'>Some Text</div>
+	<div class='sub-heading-text'>We've done some cleaver things with data and stuff - how smart are we?</div>
+	<div class='sub-heading-text'>Enter your postcode to see... something</div>
+	<div id='postcode-wrapper'>
+		<ul>
+			<li><input type='text' id='postcode-input' ng-model='postcode' maxlength='4' /></li>
+			<li style='margin-top:20px;'><a id='get-button' class='fancy-button' href='#/postcode' action-type='button' action-desc='Get Details' ng-click='setPostcode($event)'>Get details</a></li>
+		</ul>
+	</div>
+</div>
