@@ -23,6 +23,28 @@ function PostcodeResultCtrl($scope, webappService, Postcode) {
 	        	document.getElementById('postcode-map'),
 	            mapOptions);
 
+        	if(data.Points){
+        		
+		        var postcodePolygon = [],
+		        	bounds = new google.maps.LatLngBounds();
+		        for(var i = 0; i < data.Points.length; i++){
+		        	var latlng = new google.maps.LatLng(data.Points[i][0], data.Points[i][1]);
+		        	postcodePolygon.push(latlng);
+		        	bounds.extend(latlng);
+		        }
+				var postcodePath = new google.maps.Polygon({
+					path: postcodePolygon,
+					strokeColor: "#7A0177",
+					strokeOpacity: 0.8,
+					strokeWeight: 2,
+					fillColor: "F768A1",
+					fillOpacity: 0.35
+				});
+
+				postcodePath.setMap(map);
+				map.fitBounds(bounds);
+			}
+
 	        //bucket text
 	        var bucketLabel = '',
 	        	backetClass = 'bucket-' + data.Quintile;
