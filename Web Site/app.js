@@ -24,6 +24,15 @@ app
 			)
 		);
 	})
+	.get('/api/cafhs/:postcode', function(req, res){
+		var postcode = req.params.postcode;
+		res.setHeader('Content-Type', 'application/json');
+		res.end(
+			JSON.stringify(
+				data.getClosestsCafhs(postcode)
+			)
+		);
+	})
 	// 404
 	.get('*', function(req, res) {
 		res.render('404', { title: '404' });

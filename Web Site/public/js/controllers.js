@@ -9,7 +9,7 @@ function IndexCtrl($scope, webappService) {
 IndexCtrl.$inject = ['$scope', 'webappService'];
 
 function PostcodeResultCtrl($scope, webappService, Postcode) {
-	var result = Postcode.GetSLA(
+	Postcode.GetSLA(
 		webappService.getPostcode(), 
 		function(data){
 			var mapOptions = {
@@ -71,5 +71,18 @@ function PostcodeResultCtrl($scope, webappService, Postcode) {
 	        	.addClass(backetClass)
 	        	.html(bucketLabel);
 		});
+	Postcode.GetCafhs(
+		webappService.getPostcode(), 
+		function(data){
+			var listitems = '';
+			for(var c in data){
+				listitems += '<li>';
+				if(data[c].location.length > 0)
+					listitems += '<span>' + data[c].location + '</span></br>';
+				listitems += '<span>' + data[c].address + '</span></br><span>' + data[c].suburb + '</span></li>';
+			}
+			$('#cafhsAddress').append(listitems);
+		}
+	);
 };
 PostcodeResultCtrl.$inject = ['$scope', 'webappService', 'Postcode'];

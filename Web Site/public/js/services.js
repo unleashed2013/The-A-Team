@@ -27,6 +27,20 @@ angular
 					.fail(function(data){
 						callback(data);
 					});
+			},
+			GetCafhs: function(postcode, callback) {
+				$.ajax({
+					type: 'GET',
+					url: '/api/cafhs/' + postcode,
+					data: { },
+					dataType: 'JSON'
+				})
+					.done(function(data) {
+						callback(data);
+					})
+					.fail(function(data){
+						callback(data);
+					});
 			}
 		}
 	});
