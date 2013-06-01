@@ -74,7 +74,7 @@ td {
 body {
   line-height: 1;
   color: #000;
-  background: #fff;
+  background: #45474D;
   font-size: 100%;
 }
 
@@ -146,7 +146,25 @@ header {
   max-width: 960px;
   margin: 0 auto;
   margin-top: 10px;
+  clear:both;
 }
+
+  .menu div {
+    float: left;
+  }
+
+  #logo {
+    width:10%;
+    margin-right: 5%;
+  }
+
+    #logo img {
+      width: 100%;
+    }
+
+  #header-text {
+    width: 85%;
+  }
 
   .menu h1 {
     font-size: 2.7em;
@@ -261,10 +279,40 @@ header {
     width: 100%;
   }
 
+#postcode-map {
+  width:350px;
+  height:350px;
+}
+
 #details {
   margin-left: 10px;
   width: 55%;
 }
+
+#bucket {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+  #bucket.bucket-1{
+    color:#FED976;
+  }
+
+  #bucket.bucket-2{
+    color:#FEB24C;
+  }
+
+  #bucket.bucket-3{
+    color:#FD8D3C;
+  }
+
+  #bucket.bucket-4{
+    color:#F03B20;
+  }
+
+  #bucket.bucket-5{
+    color:#BD0026;
+  }
 
 footer {
   width: 100%;
@@ -278,7 +326,8 @@ footer {
   width: 60%;
   margin: auto;
   padding-top: 20px;
-  font-size: 0.5em;
+  font-size: 1em;
+  color: #989EA6;
 }
 .list-inline > li { display: inline; }
 .footer-links {
