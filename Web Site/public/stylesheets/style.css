@@ -241,6 +241,7 @@ header {
   font-size: 1em;
   cursor: pointer;
   text-decoration: none;
+  margin-right: 20px;
 }
 .fancy-button:hover {
   text-decoration: none;
