@@ -18,6 +18,9 @@ app
 	.get('/dashboard', function(req, res) {
 		res.render('dashboard', { title: 'The A Team: Dashboard' });
 	})
+	.get('/methodology', function(req, res) {
+		res.render('methodology', { title: 'The A Team: Methodology' });	
+	})
 	//api
 	.get('/api/sla/:postcode', function(req, res) {
 		var postcode = req.params.postcode;
