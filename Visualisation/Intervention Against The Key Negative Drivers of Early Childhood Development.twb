@@ -1,0 +1,920 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook version='8.1' xml:base='http://ec2-54-252-162-11.ap-southeast-2.compute.amazonaws.com:81' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 8000.13.0502.1826                -->
+  <repository-location id='InterventionsAgainstTheyKeyNegativeDriversofAEDI' path='/workbooks' revision='1.2' />
+  <preferences>
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='8.1'>
+      <aliases enabled='yes' />
+      <column caption='Car' datatype='real' default-format='p0%' name='[Medicine (copy 2)]' param-domain-type='range' role='measure' type='quantitative' value='1.0000000000000000'>
+        <calculation class='tableau' formula='1.0' />
+        <range granularity='0.10000000000000001' max='1.0000000000000000' min='0.00000000000000000' />
+      </column>
+      <column caption='Smoke' datatype='real' default-format='p0%' name='[Medicine (copy)]' param-domain-type='range' role='measure' type='quantitative' value='0.20000000000000001'>
+        <calculation class='tableau' formula='0.20000000000000001' />
+        <range granularity='0.10000000000000001' max='1.0000000000000000' min='0.00000000000000000' />
+      </column>
+      <column caption='Medicine' datatype='real' default-format='p0%' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='0.5'>
+        <calculation class='tableau' formula='0.5' />
+        <range granularity='0.10000000000000001' max='1.0000000000000000' min='0.00000000000000000' />
+      </column>
+      <column caption='Top N' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='10'>
+        <calculation class='tableau' formula='10' />
+        <range max='20' min='1' />
+      </column>
+    </datasource>
+    <datasource inline='true' name='SA SLA Extract' version='8.1'>
+      <connection class='dataengine' dbname='C:\GovHack\SA SLA.tde' schema='Extract' tablename='Extract' workgroup-auth-mode='as-is'>
+        <relation name='Extract' table='[Extract].[Extract]' type='table' />
+        <calculations>
+          <calculation column='[Calculation_1270824155742681]' formula='if [Centroid Latitude] &gt;= -35.3503 and [Centroid Latitude] &lt;= -34.5002 and [Centroid Longitude] &gt;= 138.4362 and [Centroid Longitude] &lt;= 139.044 then &quot;Greater Adelaide&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -28.364 and [Centroid Latitude] &lt;= -26.4519 and [Centroid Longitude] &gt;= 152.0734 and [Centroid Longitude] &lt;= 153.5467 then &quot;Greater Brisbane&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -12.8619 and [Centroid Latitude] &lt;= -12.001 and [Centroid Longitude] &gt;= 130.8151 and [Centroid Longitude] &lt;= 131.3967 then &quot;Greater Darwin&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -43.1213 and [Centroid Latitude] &lt;= -42.6554 and [Centroid Longitude] &gt;= 147.0267 and [Centroid Longitude] &lt;= 147.9369 then &quot;Greater Hobart&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -38.503 and [Centroid Latitude] &lt;= -37.1751 and [Centroid Longitude] &gt;= 144.3336 and [Centroid Longitude] &lt;= 145.8784 then &quot;Greater Melbourne&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -32.8019 and [Centroid Latitude] &lt;= -31.4551 and [Centroid Longitude] &gt;= 115.4495 and [Centroid Longitude] &lt;= 116.4151 then &quot;Greater Perth&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -34.3312 and [Centroid Latitude] &lt;= -32.9961 and [Centroid Longitude] &gt;= 149.9719 and [Centroid Longitude] &lt;= 151.6305 then &quot;Greater Sydney&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -35.9208 and [Centroid Latitude] &lt;= -35.1245 and [Centroid Longitude] &gt;= 148.7627 and [Centroid Longitude] &lt;=149.3993 then &quot;Greater Canberra&quot;&#13;&#10;else &quot;Regional Australia&quot;&#13;&#10;end' />
+          <calculation column='[Number of Records]' formula='1' />
+        </calculations>
+        <refresh>
+          <refresh-event add-from-file-path='' increment-value='%null%' refresh-type='create' rows-inserted='67122' timestamp-start='2013-06-01 03:03:16.064000' />
+        </refresh>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Avg' datatype='real' name='[Boundary Latitude]' role='dimension' semantic-role='[Geographical].[Latitude]' type='quantitative'>
+      </column>
+      <column aggregation='Avg' datatype='real' name='[Boundary Longitude]' role='dimension' semantic-role='[Geographical].[Longitude]' type='quantitative'>
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[Boundary Point Order]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Metro Area' datatype='string' name='[Calculation_1270824155742681]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='if [Centroid Latitude] &gt;= -35.3503 and [Centroid Latitude] &lt;= -34.5002 and [Centroid Longitude] &gt;= 138.4362 and [Centroid Longitude] &lt;= 139.044 then &quot;Greater Adelaide&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -28.364 and [Centroid Latitude] &lt;= -26.4519 and [Centroid Longitude] &gt;= 152.0734 and [Centroid Longitude] &lt;= 153.5467 then &quot;Greater Brisbane&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -12.8619 and [Centroid Latitude] &lt;= -12.001 and [Centroid Longitude] &gt;= 130.8151 and [Centroid Longitude] &lt;= 131.3967 then &quot;Greater Darwin&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -43.1213 and [Centroid Latitude] &lt;= -42.6554 and [Centroid Longitude] &gt;= 147.0267 and [Centroid Longitude] &lt;= 147.9369 then &quot;Greater Hobart&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -38.503 and [Centroid Latitude] &lt;= -37.1751 and [Centroid Longitude] &gt;= 144.3336 and [Centroid Longitude] &lt;= 145.8784 then &quot;Greater Melbourne&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -32.8019 and [Centroid Latitude] &lt;= -31.4551 and [Centroid Longitude] &gt;= 115.4495 and [Centroid Longitude] &lt;= 116.4151 then &quot;Greater Perth&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -34.3312 and [Centroid Latitude] &lt;= -32.9961 and [Centroid Longitude] &gt;= 149.9719 and [Centroid Longitude] &lt;= 151.6305 then &quot;Greater Sydney&quot;&#13;&#10;elseif [Centroid Latitude] &gt;= -35.9208 and [Centroid Latitude] &lt;= -35.1245 and [Centroid Longitude] &gt;= 148.7627 and [Centroid Longitude] &lt;=149.3993 then &quot;Greater Canberra&quot;&#13;&#10;else &quot;Regional Australia&quot;&#13;&#10;end' />
+      </column>
+      <column caption='Row' datatype='integer' name='[Calculation_7630601213809743]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='index()' scope-isolation='false'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column aggregation='Avg' datatype='real' name='[Centroid Latitude]' role='dimension' semantic-role='[Geographical].[Latitude]' type='quantitative'>
+      </column>
+      <column aggregation='Avg' datatype='real' name='[Centroid Longitude]' role='dimension' semantic-role='[Geographical].[Longitude]' type='quantitative'>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' name='[Region ID]' role='dimension' type='nominal'>
+      </column>
+      <column datatype='string' name='[Region Name]' role='dimension' type='nominal'>
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[State ID]' role='dimension' type='ordinal'>
+        <aliases>
+          <alias key='1' value='New South Wales' />
+          <alias key='2' value='Victoria' />
+          <alias key='3' value='Queensland' />
+          <alias key='4' value='South Australia' />
+          <alias key='5' value='Western Australia' />
+          <alias key='6' value='Tasmania' />
+          <alias key='7' value='Northern Territory' />
+          <alias key='8' value='Australian Capital Territory' />
+          <alias key='9' value='Other Territories' />
+        </aliases>
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[SubPolygon ID]' role='dimension' type='ordinal'>
+      </column>
+      <column-instance column='[Centroid Latitude]' derivation='None' name='[none:Centroid Latitude:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Centroid Longitude]' derivation='None' name='[none:Centroid Longitude:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Region Name]' derivation='None' name='[none:Region Name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[State ID]' derivation='None' name='[none:State ID:ok]' pivot='key' type='ordinal' />
+      <group hidden='true' name='[Action (Region ID)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Region ID]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Action (Region Name)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Region Name]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Exclusions (Centroid Latitude,Centroid Longitude,Region Name,State ID)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Centroid Latitude:qk]' />
+          <groupfilter function='level-members' level='[none:Centroid Longitude:qk]' />
+          <groupfilter function='level-members' level='[none:Region Name:nk]' />
+          <groupfilter function='level-members' level='[none:State ID:ok]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.439791' measure-ordering='alphabetic' measure-percentage='0.212914' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:State ID:ok]' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>5</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>9</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>4</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>2</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource inline='true' name='R Model Ouput JT Extract' version='8.1'>
+      <connection class='dataengine' dbname='C:\GovHack\R Model Ouput JT.tde' schema='Extract' tablename='Extract' workgroup-auth-mode='as-is'>
+        <relation name='Extract' table='[Extract].[Extract]' type='table' />
+        <calculations>
+          <calculation column='[Number of Records]' formula='1' />
+        </calculations>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Calc_Response' datatype='real' name='[Calculation_0280601215439977]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='2.6200 + 0.5370*[DwlNoMtrVehPct] + 1.1300*([DlydPurchMedNotAfrdLow95Pct]+2.6)&#13;&#10;+ 0.1080*[SmokeDurPregPct] + 1.2600*[UnemployedPct] - 0.3180*[IndigPop2011Pct] -&#13;&#10;0.6110*[RentStressPct] + 0.0001*[NursingServicesPct] + 0.0130*[DisadvMinCD] + &#13;&#10;4.5800 * [pct#population#in#SLA] + 0.9770*[Female35#39Pct] + -1.5500*[Female30#34Pct]' scope-isolation='false' />
+      </column>
+      <column caption='Rows To Show' datatype='boolean' name='[Calculation_2510602092454628]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='[Calculation_4050601220449044] &lt;= [Parameters].[Parameter 2]' scope-isolation='false'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Row_Num' datatype='integer' name='[Calculation_4050601220449044]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='index()' scope-isolation='false'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Delta' datatype='real' name='[Calculation_8930601220221852]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_0280601215439977]-[Calculation_9110601215603597]' scope-isolation='false' />
+      </column>
+      <column caption='Predicted Response' datatype='real' name='[Calculation_9110601215603597]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='2.6200 + [Parameters].[Medicine (copy 2)]*0.5370*[DwlNoMtrVehPct] + [Parameters].[Parameter 1]*1.1300*([DlydPurchMedNotAfrdLow95Pct]+2.6)&#13;&#10;+ [Parameters].[Medicine (copy)]*0.1080*[SmokeDurPregPct] + 1.2600*[UnemployedPct] - 0.3180*[IndigPop2011Pct] -&#13;&#10;0.6110*[RentStressPct] + 0.0001*[NursingServicesPct] + 0.0130*[DisadvMinCD] + &#13;&#10;4.5800 * [pct#population#in#SLA] + 0.9770*[Female35#39Pct] + -1.5500*[Female30#34Pct]' scope-isolation='false' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' datatype-customized='true' name='[SLA_number]' role='dimension' type='nominal'>
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.235602' measure-ordering='alphabetic' measure-percentage='0.584642' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Car' datatype='real' default-format='p0%' name='[Medicine (copy 2)]' param-domain-type='range' role='measure' type='quantitative' value='1.0000000000000000'>
+          <calculation class='tableau' formula='1.0' />
+          <range granularity='0.10000000000000001' max='1.0000000000000000' min='0.00000000000000000' />
+        </column>
+        <column caption='Smoke' datatype='real' default-format='p0%' name='[Medicine (copy)]' param-domain-type='range' role='measure' type='quantitative' value='0.20000000000000001'>
+          <calculation class='tableau' formula='0.20000000000000001' />
+          <range granularity='0.10000000000000001' max='1.0000000000000000' min='0.00000000000000000' />
+        </column>
+        <column caption='Medicine' datatype='real' default-format='p0%' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='0.5'>
+          <calculation class='tableau' formula='0.5' />
+          <range granularity='0.10000000000000001' max='1.0000000000000000' min='0.00000000000000000' />
+        </column>
+        <column caption='Top N' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='10'>
+          <calculation class='tableau' formula='10' />
+          <range max='20' min='1' />
+        </column>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <datasource-relationships>
+    <datasource-relationship source='SA SLA Extract' target='R Model Ouput JT Extract'>
+      <column-mapping>
+        <map key='[SA SLA Extract].[none:Region ID:nk]' value='[R Model Ouput JT Extract].[none:SLA_number:nk]' />
+      </column-mapping>
+    </datasource-relationship>
+  </datasource-relationships>
+  <mapsources>
+    <mapsource name='Online' />
+  </mapsources>
+  <actions>
+    <action caption='Filter1' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Top 10 Bar Chart' />
+      <link caption='Filter1' delimiter=',' escape='\' expression='tsl:Dashboard%201?%5BSA%20SLA%20Extract%5D.%5BRegion%20ID%5D~s0=&lt;[SLA_number]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='Top 10 Bar Chart' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='SA SLA Extract' />
+            <datasource name='R Model Ouput JT Extract' />
+            <datasource name='Parameters' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Online' />
+          </mapsources>
+          <datasource-dependencies datasource='R Model Ouput JT Extract'>
+            <column caption='Delta' datatype='real' name='[Calculation_8930601220221852]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_0280601215439977]-[Calculation_9110601215603597]' scope-isolation='false' />
+            </column>
+            <column-instance column='[Calculation_8930601220221852]' derivation='Sum' name='[sum:Calculation_8930601220221852:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <datasource-dependencies datasource='SA SLA Extract'>
+            <column aggregation='Avg' datatype='real' name='[Boundary Latitude]' role='dimension' semantic-role='[Geographical].[Latitude]' type='quantitative'>
+            </column>
+            <column aggregation='Avg' datatype='real' name='[Boundary Longitude]' role='dimension' semantic-role='[Geographical].[Longitude]' type='quantitative'>
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Boundary Point Order]' role='dimension' type='ordinal'>
+            </column>
+            <column datatype='string' name='[Region ID]' role='dimension' type='nominal'>
+            </column>
+            <column datatype='string' name='[Region Name]' role='dimension' type='nominal'>
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[SubPolygon ID]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[Boundary Latitude]' derivation='None' name='[none:Boundary Latitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Boundary Longitude]' derivation='None' name='[none:Boundary Longitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Boundary Point Order]' derivation='None' name='[none:Boundary Point Order:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Region ID]' derivation='None' name='[none:Region ID:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Region Name]' derivation='None' name='[none:Region Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SubPolygon ID]' derivation='None' name='[none:SubPolygon ID:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[SA SLA Extract].[Action (Region ID)]'>
+            <groupfilter function='level-members' level='[Region ID]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[SA SLA Extract].[Action (Region Name)]'>
+            <groupfilter function='level-members' level='[Region Name]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[SA SLA Extract].[Action (Region Name)]</column>
+            <column>[SA SLA Extract].[Action (Region ID)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]' value='% Change'>
+              <formatted-text>
+                <run fontalignment='1'>% Change</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='um_light_countries' value='true' />
+            <format attr='enabled' id='um_light_states' value='true' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='false' />
+            <format attr='enabled' id='pp2_statelabels' value='false' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Polygon' />
+            <encodings>
+              <color column='[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]' />
+              <lod column='[SA SLA Extract].[none:Region ID:nk]' />
+              <lod column='[SA SLA Extract].[none:Region Name:nk]' />
+              <lod column='[SA SLA Extract].[none:SubPolygon ID:ok]' />
+              <lod column='[SA SLA Extract].[none:Boundary Point Order:ok]' />
+              <path column='[SA SLA Extract].[none:Boundary Point Order:ok]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>SLA:&#9;</run>
+                <run bold='true'>&lt;[SA SLA Extract].[none:Region ID:nk]&gt;&#10;</run>
+                <run fontcolor='#787878'>SLA Name:&#9;</run>
+                <run bold='true'>&lt;[SA SLA Extract].[none:Region Name:nk]&gt;&#10;</run>
+                <run fontcolor='#787878'>% Change:&#9;&lt;[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]&gt;%</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[SA SLA Extract].[none:Boundary Latitude:qk]</rows>
+        <cols>[SA SLA Extract].[none:Boundary Longitude:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Top 10 Bar Chart'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Top </run>
+            <run fontalignment='1'>&lt;</run>
+            <run fontalignment='1'>[Parameters].[Parameter 2]</run>
+            <run fontalignment='1'>&gt;</run>
+            <run fontalignment='1'> Positively Affected SLA&apos;s</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='R Model Ouput JT Extract' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='R Model Ouput JT Extract'>
+            <column caption='Rows To Show' datatype='boolean' name='[Calculation_2510602092454628]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='[Calculation_4050601220449044] &lt;= [Parameters].[Parameter 2]' scope-isolation='false'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Delta' datatype='real' name='[Calculation_8930601220221852]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_0280601215439977]-[Calculation_9110601215603597]' scope-isolation='false' />
+            </column>
+            <column datatype='string' name='[SLA_group]' role='dimension' type='nominal'>
+            </column>
+            <column datatype='string' datatype-customized='true' name='[SLA_number]' role='dimension' type='nominal'>
+            </column>
+            <column-instance column='[SLA_group]' derivation='None' name='[none:SLA_group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SLA_number]' derivation='None' name='[none:SLA_number:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_8930601220221852]' derivation='Sum' name='[sum:Calculation_8930601220221852:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2510602092454628]' derivation='User' name='[usr:Calculation_2510602092454628:nk]' pivot='key' type='nominal'>
+              <table-calc ordering-type='Columns' />
+              <table-calc field='[R Model Ouput JT Extract].[Calculation_4050601220449044]' ordering-type='Columns' />
+            </column-instance>
+          </datasource-dependencies>
+          <sort class='computed' column='[R Model Ouput JT Extract].[none:SLA_group:nk]' direction='DESC' using='[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]'>
+          </sort>
+          <sort class='computed' column='[R Model Ouput JT Extract].[none:SLA_number:nk]' direction='DESC' using='[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]'>
+          </sort>
+          <filter class='categorical' column='[R Model Ouput JT Extract].[usr:Calculation_2510602092454628:nk]'>
+            <groupfilter function='member' level='[usr:Calculation_2510602092454628:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[R Model Ouput JT Extract].[usr:Calculation_2510602092454628:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]' scope='cols' value='% Change' />
+            <format attr='subtitle' class='0' field='[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]' scope='cols' value='' />
+            <format attr='auto-subtitle' class='0' field='[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]' scope='cols' value='true' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern' scope='rows' value='none' />
+            <format attr='line-pattern' scope='cols' value='none' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#acacac' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([R Model Ouput JT Extract].[none:SLA_number:nk] / [R Model Ouput JT Extract].[none:SLA_group:nk])</rows>
+        <cols>[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontsize='16'>Intervention Against the Key Negative Drivers of Early Childhood Development</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+      </style>
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='18' param='vert' type='layout-flow' w='100000' x='0' y='0'>
+            <zone h='6145' id='17' type='title' w='100000' x='0' y='0'>
+            </zone>
+            <zone h='93855' id='5' param='horz' type='layout-flow' w='100000' x='0' y='6145'>
+              <zone h='93855' id='3' type='layout-basic' w='88244' x='0' y='6145'>
+                <zone h='43588' id='1' name='Map' w='88244' x='0' y='6145'>
+                </zone>
+                <zone h='50267' id='15' name='Top 10 Bar Chart' show-title='true' w='88244' x='0' y='49733'>
+                </zone>
+              </zone>
+              <zone fixed-size='160' h='93855' id='13' is-fixed='true' type='layout-basic' w='11756' x='88244' y='6145'>
+                <zone h='41306' id='4' param='vert' type='layout-flow' w='11756' x='88244' y='16944'>
+                  <zone h='11959' id='7' param='[Parameters].[Medicine (copy 2)]' type='paramctrl' w='11756' x='88244' y='16944'>
+                    <formatted-text>
+                      <run>Access to Transport</run>
+                    </formatted-text>
+                  </zone>
+                  <zone h='11959' id='8' param='[Parameters].[Parameter 1]' type='paramctrl' w='11756' x='88244' y='28903'>
+                    <formatted-text>
+                      <run>Access to Medicine</run>
+                    </formatted-text>
+                  </zone>
+                  <zone fixed-size='79' h='14451' id='9' is-fixed='true' param='[Parameters].[Medicine (copy)]' type='paramctrl' w='11756' x='88244' y='40862'>
+                    <formatted-text>
+                      <run>Smoking While Pregnant</run>
+                    </formatted-text>
+                  </zone>
+                </zone>
+                <zone h='28723' id='14' param='vert' type='layout-flow' w='11756' x='88244' y='71277'>
+                  <zone fixed-size='129' h='22757' id='12' is-fixed='true' type='text' w='11756' x='88244' y='71277'>
+                    <formatted-text>
+                      <run bold='true' fontsize='10'>Select the bar(s) to view the SLA&apos;s on the above map.&#10;&#10;Hold down control key for multi-select. Click on whitespace to clear the filter.</run>
+                    </formatted-text>
+                  </zone>
+                </zone>
+                <zone h='13027' id='16' param='[Parameters].[Parameter 2]' type='paramctrl' w='11756' x='88244' y='58250'>
+                  <formatted-text>
+                    <run>Number of SLA&apos;s</run>
+                  </formatted-text>
+                </zone>
+                <zone h='3904' id='20' type='text' w='11756' x='88244' y='6145'>
+                  <formatted-text>
+                    <run bold='true'>Intervention Strategies</run>
+                  </formatted-text>
+                </zone>
+                <zone h='6895' id='21' type='text' w='11756' x='88244' y='10049'>
+                  <formatted-text>
+                    <run>Move sliders to reduce &#10;effect by x%</run>
+                  </formatted-text>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+        </zone>
+        <zone h='15615' id='11' type='text' w='12446' x='1030' y='30731'>
+          <formatted-text>
+            <run bold='true' fontsize='12'>Hover over a SLA to view the predicted response.</run>
+          </formatted-text>
+        </zone>
+        <zone h='10299' id='6' name='Map' param='[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]' type='color' w='12017' x='71760' y='37542'>
+        </zone>
+        <zone h='11462' id='19' type='text' w='11073' x='72618' y='16611'>
+          <formatted-text>
+            <run bold='true' fontsize='10'>Interact with the parameters to see the positive result on AEDI</run>
+          </formatted-text>
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows show-side-pane='false'>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='dashboard' maximized='1' name='Dashboard 1'>
+      <active id='6' />
+      <zones>
+        <zone name='Map'>
+          <viewpoint>
+            <zoom type='entire-view' />
+          </viewpoint>
+        </zone>
+        <zone custom-title='true' mode='slider' name='' param='[Parameters].[Medicine (copy 2)]' type='paramctrl'>
+          <formatted-text>
+            <run>Access to Transport</run>
+          </formatted-text>
+        </zone>
+        <zone custom-title='true' mode='slider' name='' param='[Parameters].[Parameter 1]' type='paramctrl'>
+          <formatted-text>
+            <run>Access to Medicine</run>
+          </formatted-text>
+        </zone>
+        <zone custom-title='true' mode='slider' name='' param='[Parameters].[Medicine (copy)]' type='paramctrl'>
+          <formatted-text>
+            <run>Smoking While Pregnant</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' name='' type='text'>
+          <formatted-text>
+            <run bold='true' fontsize='10'>Select the bar(s) to view the SLA&apos;s on the above map.&#10;&#10;Hold down control key for multi-select. Click on whitespace to clear the filter.</run>
+          </formatted-text>
+        </zone>
+        <zone custom-title='true' mode='slider' name='' param='[Parameters].[Parameter 2]' type='paramctrl'>
+          <formatted-text>
+            <run>Number of SLA&apos;s</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' name='' type='text'>
+          <formatted-text>
+            <run>Move sliders to reduce &#10;effect by x%</run>
+          </formatted-text>
+        </zone>
+        <zone name='Map' pane-specification-id='0' param='[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]' type='color'>
+        </zone>
+        <zone forceUpdate='true' name='' type='text'>
+          <formatted-text>
+            <run bold='true' fontsize='10'>Interact with the parameters to see the positive result on AEDI</run>
+          </formatted-text>
+        </zone>
+      </zones>
+    </window>
+    <window class='hidden-worksheet' name='Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[R Model Ouput JT Extract].[sum:Calculation_8930601220221852:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[Parameters].[Medicine (copy 2)]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Medicine (copy)]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+      </viewpoint>
+    </window>
+    <window class='hidden-worksheet' name='Top 10 Bar Chart'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[Parameters].[Medicine (copy 2)]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Medicine (copy)]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Parameter 2]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
