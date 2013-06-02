@@ -1,12 +1,19 @@
 /* Controllers */
-function IndexCtrl($scope, webappService) {
+function IndexCtrl($scope, $location, webappService) {
+	$('#postcode-input').on('keypress', function(evt){
+		if(evt.keyCode === 13){
+			$scope.setPostcode(evt);
+			$location.path('/postcode');
+			$scope.$apply();
+		}
+	})
 	$scope.setPostcode = function(evt) {
 		webappService.setPostcode(
 			$('#postcode-input').val()
 		);
 	};
 };
-IndexCtrl.$inject = ['$scope', 'webappService'];
+IndexCtrl.$inject = ['$scope', '$location', 'webappService'];
 
 function PostcodeResultCtrl($scope, webappService, Postcode) {
 	Postcode.GetSLA(
