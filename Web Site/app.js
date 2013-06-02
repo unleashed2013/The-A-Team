@@ -16,53 +16,7 @@ app
 		res.render('index', { title: 'The A Team: Home' });
 	})
 	.get('/dashboard', function(req, res) {
-		//res.render('dashboard', { title: 'The A Team: Dashboard' });
-		
-		//get a tableau ticket
-		// Build the post string from an object
-		var post_data = JSON.stringify({
-		    'username' : 'unleashed',
-		    'client_ip': req.connection.remoteAddress
-		});
-		//send it off to the server
-		request.post(
-		    'http://localhost:81/trusted',
-		    { form: post_data },
-		    function (error, response, body) {
-		        if (!error && response.statusCode == 200) {
-		            console.log(body);
-		            res.render('dashboard', { title: 'The A Team: Dashboard', pageData: { ticket: JSON.stringify(':)') } });
-		        }else{
-		        	res.end(JSON.stringify(':('));
-		        }
-		    }
-		);
-		
-/*
-		  // An object of options to indicate where to post to
-		  var post_options = {
-		      host: 'unleashed2013.org',
-		      port: '81',
-		      path: '/trusted',
-		      method: 'POST',
-		      headers: {
-		          'Content-Type': 'application/x-www-form-urlencoded',
-		          'Content-Length': post_data.length
-		      }
-		  };
-
-		  // Set up the request
-		  var post_req = http.request(post_options, function(post_res) {
-		      post_res.setEncoding('utf8');
-		      post_res.on('data', function (chunk) {
-		      		res.render('dashboard', { title: 'The A Team: Dashboard', pageData: { ticket: JSON.stringify(chunk) } });
-		      });
-		  });
-
-		  // post the data
-		  post_req.write(post_data);
-		  post_req.end();
-		  */
+		res.render('dashboard', { title: 'The A Team: Dashboard' });
 	})
 	//api
 	.get('/api/sla/:postcode', function(req, res) {

@@ -122,14 +122,14 @@ a img {
 }
 textarea{
 	resize:none;
-	font-family: 'Merriweather Sans', sans-serif;
+	font-family: 'Arial', sans-serif;
 }
 /*
  * Store the main color and
  * background color as variables
  */
 header {
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Arial', sans-serif;
   padding: 20px 0px 10px 0px;
   color: #fff;
   /*text-align: center;*/
@@ -190,6 +190,7 @@ header {
 
   .menu li {
     display: inline;
+    margin-left: 20px;
   }
 
 
@@ -199,7 +200,7 @@ header {
 .panel {
   width: 100%;
   display: inline-block;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #5f5858;
   padding-bottom: 5%;
 }
@@ -212,7 +213,7 @@ header {
 }
 .panel-content h1 {
   font-size: 2em;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #625B59;
   margin-bottom: 3%;
 }
@@ -327,11 +328,15 @@ header {
     margin-top: 10px;
   }
 
+.instructions {
+  margin-bottom: 20px;
+}
+
 footer {
   width: 100%;
   background-color: #45474d;
   border-top: 1px solid #3d8075;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Arial', sans-serif;
   display: inline-block;
   padding-bottom: 3%;
 }

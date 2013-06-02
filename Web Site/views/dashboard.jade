@@ -2,5 +2,14 @@ extend layout
 block content
 	.panel(id='webapp', ng-app='webapp')
 		.panel-content
-			.dashboard
-			
+			h1 AEDI Visual Dashboard
+			.instructions We've built this dashbaord which you can access and interact with
+			.instructions You can either view it in your browser, or there is also an iPad app
+			h2 Login Instructions
+			.instructions When asked for your login details please use the following account information:
+				ul
+					li Username: <strong>view</strong>
+					li Password: <strong>view</strong>
+			a.fancy-button(href='http://unleashed2013.org:81/views/InterventionsAgainstTheyKeyNegativeDriversofAEDI/Dashboard1') Launch!
+			a(href='http://unleashed2013.org:81/views/InterventionsAgainstTheyKeyNegativeDriversofAEDI/Dashboard1')
+				img(src='/images/tableau.png',style='margin-top:20px;')
