@@ -8,7 +8,7 @@ This material is no longer available online but can be run locally. First instal
 Then clone the material
 
 ```
-git git@github.com:unleashed2013/The-A-Team.git
+git clone git@github.com:unleashed2013/The-A-Team.git
 ```
 
 and from within project root run
